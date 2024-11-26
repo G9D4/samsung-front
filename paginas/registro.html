@@ -1,78 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Crear Nueva Cuenta</title>
 </head>
-
 <body>
-    <%- include('includes/header-publicidad.ejs') %>
-        <%- include('includes/navigation.ejs') %>
-
-            <main>
-                <% if (mensajeError) { %>
-                    <div class="user-message user-message--error">
-                        <%= mensajeError %>
-                    </div>
-                    <% } %>
-                        <div class="box-center_flex">
-                            <form class="container" action="/usuario/signup" method="POST" novalidate>
-                                <div class="datos">
-                                    <div id="page-title"><b>Crear nueva cuenta de cliente</b></div>
-                                    <legend class="legend">
-                                        <div>Información Personal</div>
-                                    </legend>
-                                    <div>
-                                        <label>Nombres <span class="asterisco">*</span></label>
-                                        <input type="text" name="nombres" value="<%= datosAnteriores.nombres %>"
-                                            class="<%= erroresValidacion.find(e => e.path === 'nombres') ? 'inputText invalid' : 'inputText' %>"
-                                            autocomplete="off" required>
-                                    </div>
-                                    <div>
-                                        <label>Apellidos <span class="asterisco">*</span></label>
-                                        <input type="text" name="apellidos" value="<%= datosAnteriores.apellidos %>"
-                                            class="<%= erroresValidacion.find(e => e.path === 'apellidos') ? 'inputText invalid' : 'inputText' %>"
-                                            autocomplete="off" required>
-                                    </div>
-                                </div>
-                                <div class="datos">
-                                    <legend class="legend">
-                                        <div>Información de inicio de sesión</div>
-                                    </legend>
-                                    <div>
-                                        <label>Correo electrónico <span class="asterisco">*</span></label>
-                                        <input type="email" name="email" value="<%= datosAnteriores.email %>"
-                                            class="<%= erroresValidacion.find(e => e.path === 'email') ? 'inputText invalid' : 'inputText' %>"
-                                            autocomplete="off" required>
-                                    </div>
-                                    <div>
-                                        <label>Contraseña <span class="asterisco">*</span></label>
-                                        <input type="password" name="password" value="<%= datosAnteriores.password %>"
-                                            class="<%= erroresValidacion.find(e => e.path === 'password') ? 'inputText invalid' : 'inputText' %>"
-                                            autocomplete="off" required>
-                                    </div>
-                                    <div>
-                                        <label>Confirmar Contraseña <span class="asterisco">*</span></label>
-                                        <input type="password" name="password2" value="<%= datosAnteriores.password2 %>"
-                                            class="<%= erroresValidacion.find(e => e.path === 'password2') ? 'inputText invalid' : 'inputText' %>"
-                                            autocomplete="off" required>
-                                    </div>
-                                    <div>
-                                        <span class="asterisco">*Campos obligatorios</span>
-                                    </div>
-                                    <div>
-                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                                        <button type="submit" class="btn-samsung">
-                                            <span>Crear una cuenta</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-            </main>
+    <main id="main-content">
+        <form id="create-account-form">
+            <div id="form-header">
+                <div id="page-title"><b>Crear nueva cuenta de cliente</b></div>
+            </div>
+            <fieldset id="personal-info-section">
+                <legend>Información Personal</legend>
+                <div id="personal-nombres">
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" id="nombres" name="nombres" required>
+                </div>
+                <br>
+                <div id="personal-apellidos">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                </div>
+                <br>
+                <div id="personal-telefono">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <h4>Seleccione</h4>
+                <div id="checkbox-novedades">
+                    <input type="checkbox" id="novedades" name="novedades">
+                    <label for="novedades">Quiero recibir novedades</label>
+                </div>
+                <div id="checkbox-asistencia">
+                    <input type="checkbox" id="asistencia" name="asistencia">
+                    <label for="asistencia">Permitir asistencia de compra remota 
+                        <span id="asistencia-tooltip" class="tooltip">?</span>
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset id="login-info-section">
+                <legend>Información de inicio de sesión</legend>
+                <div id="login-email">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <br>
+                <div id="login-password">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <br>
+                <div id="login-password-confirm">
+                    <label for="password_confirm">Confirmar Contraseña:</label>
+                    <input type="password" id="password_confirm" name="password_confirm" required>
+                </div>
+            </fieldset>
+            <div id="form-footer">
+                <button id="submit-button" type="submit">Crear Cuenta</button>
+            </div>
+        </form>
+    </main>
 </body>
-
 </html>
