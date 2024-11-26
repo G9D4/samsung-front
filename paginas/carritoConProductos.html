@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CarritoConProductos</title>
 </head>
+
 <body>
     <header>
         <div class="main-header__carousel">
@@ -52,7 +54,7 @@
                         Ventas especiales
                     </a>
                 </li>
-    
+
             </ul>
             <ul class="main-header__item-list ">
                 <li class="main-header__item box-center_flex">
@@ -85,40 +87,52 @@
     </header>
     <main>
         <section>
-            <article>
-                <p>Articulo</p>
-                <p>Precio</p>
-                <p>Cantidad</p>
-                <p>Subtotal</p>
-            </article>
-            <article>
-                <img src="https://shop.samsung.com/latin/pub/media/catalog/product/cache/6cd1311462f4ff327d90cc1375d833bb/s/m/sm-s721_galaxys24fe_gray_front_thumb.png" alt="GALAXY S24" srcset="">
-                <p>Color: Gray</p>
-                <p>US$ 719.00</p>
-                <p>1</p>
-                <p>US$ 719.00</p>
-            </article>
-            <article>
-                <img src="https://shop.samsung.com/latin/pub/media/catalog/product/cache/6cd1311462f4ff327d90cc1375d833bb/e/f/ef-gs721c_003_front_gray_thumb.png" alt="GALAXY S24 STANDING CASE" srcset="">
-                <p>GRATIS</p>
-                <p>US$ 0.00</p>
-                <p>1</p>
-                <p>US$ 0.00</p>
-            </article>
-            <article>
+            <table>
+                <tr>
+                    <th>Articulo</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://shop.samsung.com/latin/pub/media/catalog/product/cache/6cd1311462f4ff327d90cc1375d833bb/s/m/sm-s721_galaxys24fe_gray_front_thumb.png"
+                            alt="GALAXY S24" srcset="">
+                    </td>
+                    <td>Color: Gray</td>
+                    <td>US$ 719.00</td>
+                    <td>
+                        <input type="number" name="cantidad" id="cantidad" value="1">
+                    </td>
+                    <td>US$ 719.00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://shop.samsung.com/latin/pub/media/catalog/product/cache/6cd1311462f4ff327d90cc1375d833bb/e/f/ef-gs721c_003_front_gray_thumb.png"
+                            alt="GALAXY S24 STANDING CASE" srcset="">
+                    </td>
+                    <td>GRATIS</td>
+                    <td>US$ 0.00</td>
+                    <td>
+                        <input type="number" name="cantidad" id="cantidad" value="1">
+                    </td>
+                    <td>US$ 0.00</td>
+                </tr>
+            </table>
+            <div>
                 <button>Aplicar Código de descuento</button>
                 <button>Actualizar Carrito</button>
-            </article>
+            </div>
         </section>
         <aside>
-            <section>
+            <form>
                 <h2>Resumen</h2>
                 <p>Subtotal: US$ 719.00</p>
                 <p>Impuestos US$ 50.33</p>
                 <h3>Total incluyendo impuestos US$ 769.33</h3>
                 <h3>Total sin incluir impuestos US$ 719.00</h3>
-                <button>Finalizar Pedido</button>
-            </section>
+                <button type="submit">Finalizar Pedido</button>
+            </form>
         </aside>
     </main>
     <footer class="footer">
@@ -163,4 +177,5 @@
         </div>
     </footer>
 </body>
+
 </html>
