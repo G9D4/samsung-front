@@ -86,39 +86,48 @@
     <main>
         <form action="">
             <fieldset>
-                <h2>Contacto</h2>
+                <legend>Contacto</legend>
                 <input type="email" id="contacto" placeholder="Correo electrónico">
+                <br>
                 <input type="checkbox" id="publicidad">
                 <label for="publicidad">Enviarme novedades y ofertas por correo electrónico</label>
             </fieldset>
             <fieldset>
-                <h2>Entrega</h2>
-                <label for="pais"></label>
+                <legend>Entrega</legend>
+                <label for="pais">País</label>
                 <select name="pais" id="pais">
                     <option value="peru">Perú</option>
                     <option value="colombio">Colombia</option>
                     <option value="chile">Chile</option>
                     <option value="argentina">Argentina</option>
                 </select>
+                <br>
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre">
+                <br>
                 <label for="apellidos">Apellidos</label>
                 <input type="text" name="apellidos" id="apellidos">
+                <br>
                 <label for="dni">DNI</label>
                 <input type="number" name="dni" id="dni">
+                <br>
                 <label for="direccion">Dirección</label>
                 <input type="text" name="direccion" id="direccion">
+                <br>
                 <label for="telefono">Teléfono</label>
                 <input type="tel" name="telefono" id="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
             </fieldset>
             <fieldset>
-                <h2>Pago</h2>
+                <legend>Pago</legend>
                 <label for="numero-tarjeta">Número de la tarjeta</label>
                 <input type="number" id="numero-tarjeta">
+                <br>
                 <label for="nombre-titular">Nombre del titular</label>
                 <input type="text" id="nombre-titular">
+                <br>
                 <label for="fecha-expiracion">Fecha de expiración</label>
                 <input type="number" id="fecha-expiracion">
+                <br>
                 <label for="fecha-expiracion">CVC</label>
                 <input type="number" id="fecha-expiracion">
             </fieldset>
